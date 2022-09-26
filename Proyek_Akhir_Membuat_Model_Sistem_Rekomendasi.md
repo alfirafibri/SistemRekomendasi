@@ -80,6 +80,7 @@ Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe*
 
 ## *Data Preparation*
 Teknik *data preparation* yang dilakukan pada proyek kali ini adalah sebagai berikut:
+
 *1. Removing missing value*
 
 Tahapan ini bertujuan untuk memeriksa ada tidaknya *missing value*, dimana apabila tidak memiliki *missing value* akan  membuat performa model menjadi lebih baik. Tahap ini dilakukan dengan menggunakan *"dataframe.dropna()"* yang mana akan berfungsi untuk menghapuskan data yang memiliki *null values* di dalam *row* setiap data.
