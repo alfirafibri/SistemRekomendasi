@@ -96,33 +96,57 @@ Pada tahap ini dataset akan dibagi menjadi 2, yaitu *train* dan *test* data. *Tr
 
 #
 ## Modeling
-Pada proyek kali ini menggunakan model dengan teknik embedding, yaitu model Neural Collaborative Filtering (NCF). Model Neural Collaborative Filtering (NCF) merupakan sebuah neural network yang menyediakan Collaborative Filtering berdasarkan umpan balik implisit yang mana dapat merekomendasikan produk berdasarkan interaksi user dan item, seperti memberian penilaian berupa skor rating terhadap suatu film. Berikut ini merupakan tahapan dalam mendapatkan list rekomendasi film berdasarkan perilaku user yang dalam hal ini adalah pemberian rating terhadap film yang telah ditonton oleh user tersebut :
-1. Mencari data film apa saja yang telah ditonton oleh user yang kemudian dimasukkan ke dalam dataframe baru, dengan parameter userId, plot dengan nilai False, dan temp dengan nilai 1.
-2. Mencari penilaian dengan rating terendah dari data film, dengan parameter rating_df.userId yang bernilai sama dengan userId.
-3. Membuat top_movie_refference berdasarkan urutan rating dari data film tersebut, dengan parameter sort_values dari "rating" dan ascending dengan nilai False.
-4. Membuat dataframe baru yaitu user_pref_df berdasarkan dataframe utama movie_df. Kemudian melakukan seleksi dengan data yang dimasukkan adalah film yang telah terkategorikan ke dalam top_movie_refference. Parameter yang digunakan dalam tahap ini adalah movie_df yang diambil dari movieId dan parameter isin yang berasal dari top_movie_refference.
-5. Menghitung rata-rata rating dari data film yang telah diberikan oleh user, dengan parameter rating_df.userId yang bernilai sama dengan userId.
+Pada proyek kali ini menggunakan model dengan *teknik embedding*, yaitu model *Neural Collaborative Filtering* (NCF). Model NFC merupakan sebuah *neural network* yang menyediakan *collaborative filtering* berdasarkan umpan balik *implisit* yang mana dapat merekomendasikan produk berdasarkan interaksi *user* dan item, seperti memberian penilaian berupa skor rating terhadap suatu film. Berikut ini merupakan tahapan dalam mendapatkan *list* rekomendasi film berdasarkan perilaku *user* yang dalam hal ini adalah pemberian rating terhadap film yang telah ditonton oleh *user* tersebut :
+1. Mencari data film apa saja yang telah ditonton oleh *user* yang kemudian dimasukkan ke dalam *dataframe* baru, dengan parameter *userId*, *plot* dengan nilai *False*, dan *temp* dengan nilai 1.
+2. Mencari penilaian dengan rating terendah dari data film, dengan parameter *rating_df.userId* yang bernilai sama dengan *userId*.
+3. Membuat *top_movie_refference* berdasarkan urutan rating dari data film tersebut, dengan parameter *sort_values* dari "rating" dan *ascending* dengan nilai *False*.
+4. Membuat *dataframe* baru yaitu *user_pref_df* berdasarkan dataframe utama *movie_df*. Kemudian melakukan seleksi dengan data yang dimasukkan adalah film yang telah terkategorikan ke dalam *top_movie_refference*. Parameter yang digunakan dalam tahap ini adalah *movie_df* yang diambil dari *movieId* dan parameter isin yang berasal dari *top_movie_refference*.
+5. Menghitung rata-rata rating dari data film yang telah diberikan oleh *user&, dengan parameter *rating_df.userId* yang bernilai sama dengan *userId*.
 
 Berikut ini merupakan hasil top 10 dari sistem rekomendasi film dengan rata-rata ratingnya adalah 5.0/5.0 :
 
+| movieId | title	                                           | genres                                          |
+|---------|--------------------------------------------------|-------------------------------------------------|
+| 293     | Léon: The Professional (a.k.a. The Professiona...| Action-Crime-Drama-Thriller                     |
+| 457     | Fugitive, The (1993)                             | Thriller                                        |
+| 750     | Dr. Strangelove or: How I Learned to Stop Worr...| Comedy-War                                      |
+| 1089    | Reservoir Dogs (1992)		                         | Crime-Mystery-Thriller                          |
+| 1198    | Raiders of the Lost Ark (Indiana Jones and the...| Action-Adventure                                |
+| 1199    | Brazil (1985)         		                       | Fantasy|Sci-Fi                                  |
+| 1206    | Clockwork Orange, A (1971)                       | Crime-Drama-Sci-Fi-Thriller                     |
+| 1291 	  | Indiana Jones and the Last Crusade (1989)	       | Action-Adventure                                |
+| 1610 	  | Hunt for Red October, The (1990)	               | Action-Adventure-Thriller                       |
+| 2329 	  | American History X (1998) 	                     | Crime-Drama                                     |
 
-#### Evaluation
-Evaluasi pada proyek ini adalah dengan menggunakan mse (mean squared error), precision, dan recall.
-1. MSE (Mean Squared Error)
-Metode MSE ini digunakan untuk melakukan pengecekan estimasi yaitu berapa nilai kesalahan pada prediksi. Apabila nilai MSE yang dihasilkan rendah atau mendekati nol maka menunjukkan bahwa hasil prediksi sesuai dengan data asli sehingga bisa dijadikan perhitungan prediksi kembali di masa yang mendatang. Metode MSE ini juga digunakan untuk mengevaluasi metode pengukuran dengan model regresi atau model prediksi seperti moving average, weighted moving average, dan analisis trendline. Cara menghitung MSE adalah dengan melakukan pengurangan antara nilai data asli dengan data prediksi yang kemudian hasilnya dikuadratkan, lalu dijumlahkan secara keseluruhan dan membaginya dengan banyaknya data yang ada. Nilai MSE yang didapatkan dari proyek ini adalah 0.0047. Di bawah ini merupakan hasil grafik MSE yang dihasilkan. Dapat dilihat untuk MSE Train menghasilkan grafik yang menurun dan pada MSE Test menghasilkan grafik yang cenderung stabil meskipun terjadi sedikit penurunan namun tidak signifikan.
+#
+#### *Evaluation*
+Evaluasi pada proyek ini adalah dengan menggunakan mse *(mean squared error)*, *precision*, dan *recall*.
 
-2. Precission 
-Precission merupakan tingkat ketepatan antara informasi yang diminta atau sedang dicari oleh user dengan hasil informasi yang diberikan oleh sistem. Nilai precission yang didapatkan dari proyek ini adalah 1.0000. Di bawah ini merupakan hasil grafik precission yang dihasilkan. Dapat dilihat untuk Precission Train menghasilkan grafik yang meningkat dan pada Precission Test menghasilkan grafik yang cenderung stabil.
+1. MSE *(Mean Squared Error)*
 
-3. Recall 
-Recall merupakan tingkat keberhasilan sistem dalam menemukan kembali sebuah informasi. Nilai Recall yang didapatkan dari proyek ini adalah 0.7579. Di bawah ini merupakan hasil grafik recall yang dihasilkan. Dapat dilihat untuk Recall Train menghasilkan grafik yang meningkat dan pada Recall Test menghasilkan grafik yang cenderung menurun dan bergelombang.
+Metode MSE ini digunakan untuk melakukan pengecekan estimasi yaitu berapa nilai kesalahan pada prediksi. Apabila nilai MSE yang dihasilkan rendah atau mendekati nol maka menunjukkan bahwa hasil prediksi sesuai dengan data asli sehingga bisa dijadikan perhitungan prediksi kembali di masa yang mendatang. Metode MSE ini juga digunakan untuk mengevaluasi metode pengukuran dengan model *regresi* atau model prediksi seperti *moving average*, *weighted moving average*, dan analisis *trendline*. Cara menghitung MSE adalah dengan melakukan pengurangan antara nilai data asli dengan data prediksi yang kemudian hasilnya dikuadratkan, lalu dijumlahkan secara keseluruhan dan membaginya dengan banyaknya data yang ada. Nilai MSE yang didapatkan dari proyek ini adalah 0.0047. Di bawah ini merupakan hasil grafik MSE yang dihasilkan. Dapat dilihat untuk MSE *Train* menghasilkan grafik yang menurun dan pada MSE *Test* menghasilkan grafik yang cenderung stabil meskipun terjadi sedikit penurunan namun tidak signifikan.
 
-## Conclusion
+![image](https://user-images.githubusercontent.com/100407187/192286140-fbda7002-5e82-46ea-884a-729f75d6e076.png)
+
+
+*2. Precission* 
+
+*Precission* merupakan tingkat ketepatan antara informasi yang diminta atau sedang dicari oleh *user* dengan hasil informasi yang diberikan oleh sistem. Nilai *precission* yang didapatkan dari proyek ini adalah 1.0000. Di bawah ini merupakan hasil grafik *precission* yang dihasilkan. Dapat dilihat untuk *Precission Train* menghasilkan grafik yang meningkat dan pada *Precission Test* menghasilkan grafik yang cenderung stabil.
+
+![image](https://user-images.githubusercontent.com/100407187/192286417-ddb810a4-ffee-4ae6-8081-68ae6ec4a611.png)
+
+*3. Recall* 
+*Recall* merupakan tingkat keberhasilan sistem dalam menemukan kembali sebuah informasi. Nilai *recall* yang didapatkan dari proyek ini adalah 0.7579. Di bawah ini merupakan hasil grafik *recall* yang dihasilkan. Dapat dilihat untuk *Recall Train* menghasilkan grafik yang meningkat dan pada *Recall Test* menghasilkan grafik yang cenderung menurun dan bergelombang.
+
+![image](https://user-images.githubusercontent.com/100407187/192286669-ae3e3bca-9348-480e-9b39-21448692d886.png)
+#
+#### *Conclusio*n
 Berdasarkan proyek sistem rekomendasi yangg telah dikerjakan, maka dapat disimpulkan bahwa : 
-- Nilai MSE (Mean Squared Error) yang didapatkan adalah 0.0047.
-- Nilai precission yang didapatkan adalah 1.0000.
-- Nilai Recall yang didapatkan adalah 0.7579.
+- Nilai MSE *(Mean Squared Error)* yang didapatkan adalah 0.0047.
+- Nilai *Precission* yang didapatkan adalah 1.0000.
+- Nilai *Recall* yang didapatkan adalah 0.7579.
 
-## References
-- Halim, A., Gohzali, H., Panjaitan, D. M., & Maulana, I. (2017). Sistem Rekomendasi Film menggunakan Bisecting K-Means dan Collaborative Filtering.
-- Zartesya, M. A., & Prasvita, D. S. (2021). Penerapan Collaborative Filtering, PCA dan K-Means dalam Pembangunan Sistem Rekomendasi Film. Senamika, 2(1), 579-587.
+#
+#### *References*
+- Halim, A., Gohzali, H., Panjaitan, D. M., & Maulana, I. (2017). Sistem Rekomendasi Film menggunakan *Bisecting K-Means* dan *Collaborative Filtering*.
+- Zartesya, M. A., & Prasvita, D. S. (2021). Penerapan *Collaborative Filtering*, PCA dan *K-Means* dalam Pembangunan Sistem Rekomendasi Film. Senamika, 2(1), 579-587.
