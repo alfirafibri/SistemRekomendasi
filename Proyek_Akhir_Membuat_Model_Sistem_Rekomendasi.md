@@ -43,7 +43,9 @@ Dataset yang digunakan pada proyek ini didapatkan dari *website* kaggle.com. Unt
 
 #
 Berikut ini adalah *overview* dari dataset yang telah dijadikan *dataframe* :
+
 *1. movie_df*
+
 Merupakan *dataframe* yang berisi data dari file *movies.csv* seperti yang ditunjukkan pada tabel di bawah ini :
 | movieId | title	                                   | genres                                      |
 |---------|------------------------------------------|---------------------------------------------|
@@ -60,6 +62,7 @@ Merupakan *dataframe* yang berisi data dari file *movies.csv* seperti yang ditun
 | 193609  | Andrew Dice Clay: Dice Rules (1991)		   | Comedy                                      |
 
 *2. rating_df*
+
 Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe* ini data *timestamp* telah di *drop* karena data tersebut tidak diperlukan.*Dataframe* rating ditunjukkan pada tabel di bawah ini :
 | userId | movieId | rating |
 |--------|---------|--------|
