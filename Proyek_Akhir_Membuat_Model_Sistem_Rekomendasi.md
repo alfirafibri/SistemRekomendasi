@@ -134,6 +134,7 @@ Metode MSE ini digunakan untuk melakukan pengecekan estimasi yaitu berapa nilai 
 ![image](https://user-images.githubusercontent.com/100407187/192286417-ddb810a4-ffee-4ae6-8081-68ae6ec4a611.png)
 
 *3. Recall* 
+
 *Recall* merupakan tingkat keberhasilan sistem dalam menemukan kembali sebuah informasi. Nilai *recall* yang didapatkan dari proyek ini adalah 0.7579. Di bawah ini merupakan hasil grafik *recall* yang dihasilkan. Dapat dilihat untuk *Recall Train* menghasilkan grafik yang meningkat dan pada *Recall Test* menghasilkan grafik yang cenderung menurun dan bergelombang.
 
 ![image](https://user-images.githubusercontent.com/100407187/192286669-ae3e3bca-9348-480e-9b39-21448692d886.png)
