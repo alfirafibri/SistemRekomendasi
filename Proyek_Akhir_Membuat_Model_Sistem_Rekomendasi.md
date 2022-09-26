@@ -63,7 +63,7 @@ Merupakan *dataframe* yang berisi data dari file *movies.csv* seperti yang ditun
 
 *2. rating_df*
 
-Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe* ini data *timestamp* telah di *drop* karena data tersebut tidak diperlukan.*Dataframe* rating ditunjukkan pada tabel di bawah ini :
+Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe* ini data *timestamp* telah di *drop* karena data tersebut tidak diperlukan. *Dataframe* rating ditunjukkan pada tabel di bawah ini :
 | userId | movieId | rating |
 |--------|---------|--------|
 | 1	     | 1	     | 4.0    |
@@ -78,10 +78,11 @@ Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe*
 | 610    | 168252  | 5.0    |
 | 610    | 170875  | 3.0    |
 
-## Data Preparation
-Teknik data preparation yang dilakukan pada proyek kali ini adalah sebagai berikut:
-1. Removing missing value
-Tahapan ini bertujuan untuk memeriksa ada tidaknya missing value, dimana apabila tidak memiliki missing value akan  membuat performa model menjadi lebih baik. Tahap ini dilakukan dengan menggunakan "dataframe.dropna()" yang mana akan berfungsi untuk menghapuskan data yang memiliki null values di dalam row setiap data.
+## *Data Preparation*
+Teknik *data preparation* yang dilakukan pada proyek kali ini adalah sebagai berikut:
+*1. Removing missing value*
+
+Tahapan ini bertujuan untuk memeriksa ada tidaknya *missing value*, dimana apabila tidak memiliki *missing value* akan  membuat performa model menjadi lebih baik. Tahap ini dilakukan dengan menggunakan *"dataframe.dropna()"* yang mana akan berfungsi untuk menghapuskan data yang memiliki *null values* di dalam *row* setiap data.
 
 2. Normalisasi
 Tahapan ini bertujuan untuk mengubah nilai kolom numerik dalam kumpulan data ke skala umum, tanpa mendistorsi perbedaan dalam rentang nilai. Pada proyek ini, data yang dinormalisasi adalah data pada kolom rating pada file ratings.csv dengan menggunakan metode Min Max. Pada metode Min Max ini setiap nilai pada sebuah fitur akan dikurangi dengan nilai minimum fitur tersebut, setelah itu akan dibagi dengan rentang nilai atau nilai maksimum dikurangi nilai minimum dari fitur tersebut.
