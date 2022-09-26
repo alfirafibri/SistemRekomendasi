@@ -139,7 +139,7 @@ Metode MSE ini digunakan untuk melakukan pengecekan estimasi yaitu berapa nilai 
 ![image](https://user-images.githubusercontent.com/100407187/192286669-ae3e3bca-9348-480e-9b39-21448692d886.png)
 #
 ## *Conclusio*n
-Berdasarkan proyek sistem rekomendasi yangg telah dikerjakan, maka dapat disimpulkan bahwa : 
+Berdasarkan proyek sistem rekomendasi yang telah dikerjakan, maka dapat disimpulkan bahwa : 
 - Nilai MSE *(Mean Squared Error)* yang didapatkan adalah 0.0047.
 - Nilai *Precission* yang didapatkan adalah 1.0000.
 - Nilai *Recall* yang didapatkan adalah 0.7579.
