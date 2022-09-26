@@ -61,7 +61,19 @@ Merupakan *dataframe* yang berisi data dari file *movies.csv* seperti yang ditun
 
 *2. rating_df*
 Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe* ini data *timestamp* telah di *drop* karena data tersebut tidak diperlukan.*Dataframe* rating ditunjukkan pada tabel di bawah ini :
-
+| userId | movieId | rating |
+|--------|---------|--------|
+| 1	     | 1	     | 4.0    |
+| 1	     | 3	     | 4.0    |
+| 1	     | 6	     | 4.0    |
+| 1	     | 47	     | 5.0    |
+| 1	     | 50	     | 5.0    |
+| ...... | ....... | ...... |
+| 610    | 166534  | 4.0    |
+| 610    | 168248  | 5.0    |
+| 610    | 168250  | 5.0    |
+| 610    | 168252  | 5.0    |
+| 610    | 170875  | 3.0    |
 
 ## Data Preparation
 Teknik data preparation yang dilakukan pada proyek kali ini adalah sebagai berikut:
