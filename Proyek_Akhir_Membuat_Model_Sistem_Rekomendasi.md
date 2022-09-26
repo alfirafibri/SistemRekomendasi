@@ -16,13 +16,11 @@ Berdasarkan penjelasan latar belakang di atas, maka dapat dirumuskan permasalaha
 - Bagaimana cara meningkatkan *user experience* dalam mencari film yang diinginkan?
 - Bagaimana cara penerapan pendekatan *collaborative filtering* dalam membuat sistem rekomendasi film?
 
-#
 #### *2. Goals*
 Tujuan yang diharapkan dari proyek ini adalah sebagai berikut :
 - Dapat meningkatkan *user experience* dalam mencari film yang diinginkan.
 - Dapat menerapkan pendekatan *collaborative filtering* dalam membuat sistem rekomendasi film.
 
-#
 #### *3. Solution Statements*
 Dari rumusan masalah dan tujuan di atas, maka solusi yang dapat dilakukan adalah sebagai berikut :
 - Menggunakan pendekatan *collaborative filtering* dalam membuat sistem rekomendasi film. Hal ini dikarenakan dataset yang digunakan dalam proyek ini berisi tentang rating *user* terhadap film-film yang telah ditonton. Atribut yang digunakan pada pendekatan *collaborative filtering* ini adalah *perilaku user*, yaitu seperti merekomendasikan suatu film berdasarkan riwayat rating dari *user* itu sendiri ataupun *user* lain.
@@ -95,7 +93,7 @@ Tahapan ini bertujuan untuk mengubah nilai kolom numerik dalam kumpulan data ke 
 Pada tahap ini dataset akan dibagi menjadi 2, yaitu *train* dan *test* data. *Train* data digunakan sebagai *training* model, sedangkan *test* data digunakan sebagai validasi model. Dalam proyek kali ini dataset dibagi sesuai dengan proporsi yang umum digunakan yaitu 80:20, 80% sebagai *train* data dan 20% sebagai *test* data. Proses dalam melakukan *splitting* ini dimulai dengan dataset mengacak sample data yang diikuti dengan membagi data tersebut. Pada *splitting* ini terdapat parameter *test_size* yang digunakan untuk mendefinisikan ukuran data *testing* yang mana dalam proyek ini adalah *test_size=200000*. Selanjutnya yaitu membagi data untuk *modelling* dengan menggunakan *slicing* dengan format [baris, kolom], dimana *[X_train[:, 0], X_train[:, 1]* yang berarti akan mengeksekusi semua baris, kolom pertama dan kedua.
 
 #
-## Modeling
+## *Modelling*
 Pada proyek kali ini menggunakan model dengan *teknik embedding*, yaitu model *Neural Collaborative Filtering* (NCF). Model NFC merupakan sebuah *neural network* yang menyediakan *collaborative filtering* berdasarkan umpan balik *implisit* yang mana dapat merekomendasikan produk berdasarkan interaksi *user* dan item, seperti memberian penilaian berupa skor rating terhadap suatu film. Berikut ini merupakan tahapan dalam mendapatkan *list* rekomendasi film berdasarkan perilaku *user* yang dalam hal ini adalah pemberian rating terhadap film yang telah ditonton oleh *user* tersebut :
 1. Mencari data film apa saja yang telah ditonton oleh *user* yang kemudian dimasukkan ke dalam *dataframe* baru, dengan parameter *userId*, *plot* dengan nilai *False*, dan *temp* dengan nilai 1.
 2. Mencari penilaian dengan rating terendah dari data film, dengan parameter *rating_df.userId* yang bernilai sama dengan *userId*.
@@ -119,7 +117,7 @@ Berikut ini merupakan hasil top 10 dari sistem rekomendasi film dengan rata-rata
 | 2329 	  | American History X (1998) 	                     | Crime-Drama                                     |
 
 #
-#### *Evaluation*
+## *Evaluation*
 Evaluasi pada proyek ini adalah dengan menggunakan mse *(mean squared error)*, *precision*, dan *recall*.
 
 1. MSE *(Mean Squared Error)*
@@ -140,13 +138,13 @@ Metode MSE ini digunakan untuk melakukan pengecekan estimasi yaitu berapa nilai 
 
 ![image](https://user-images.githubusercontent.com/100407187/192286669-ae3e3bca-9348-480e-9b39-21448692d886.png)
 #
-#### *Conclusio*n
+## *Conclusio*n
 Berdasarkan proyek sistem rekomendasi yangg telah dikerjakan, maka dapat disimpulkan bahwa : 
 - Nilai MSE *(Mean Squared Error)* yang didapatkan adalah 0.0047.
 - Nilai *Precission* yang didapatkan adalah 1.0000.
 - Nilai *Recall* yang didapatkan adalah 0.7579.
 
 #
-#### *References*
+## *References*
 - Halim, A., Gohzali, H., Panjaitan, D. M., & Maulana, I. (2017). Sistem Rekomendasi Film menggunakan *Bisecting K-Means* dan *Collaborative Filtering*.
 - Zartesya, M. A., & Prasvita, D. S. (2021). Penerapan *Collaborative Filtering*, PCA dan *K-Means* dalam Pembangunan Sistem Rekomendasi Film. Senamika, 2(1), 579-587.
