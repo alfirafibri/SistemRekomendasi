@@ -78,6 +78,7 @@ Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe*
 | 610    | 168252  | 5.0    |
 | 610    | 170875  | 3.0    |
 
+#
 ## *Data Preparation*
 Teknik *data preparation* yang dilakukan pada proyek kali ini adalah sebagai berikut:
 
@@ -85,14 +86,14 @@ Teknik *data preparation* yang dilakukan pada proyek kali ini adalah sebagai ber
 
 Tahapan ini bertujuan untuk memeriksa ada tidaknya *missing value*, dimana apabila tidak memiliki *missing value* akan  membuat performa model menjadi lebih baik. Tahap ini dilakukan dengan menggunakan *"dataframe.dropna()"* yang mana akan berfungsi untuk menghapuskan data yang memiliki *null values* di dalam *row* setiap data.
 
-2. Normalisasi
-Tahapan ini bertujuan untuk mengubah nilai kolom numerik dalam kumpulan data ke skala umum, tanpa mendistorsi perbedaan dalam rentang nilai. Pada proyek ini, data yang dinormalisasi adalah data pada kolom rating pada file ratings.csv dengan menggunakan metode Min Max. Pada metode Min Max ini setiap nilai pada sebuah fitur akan dikurangi dengan nilai minimum fitur tersebut, setelah itu akan dibagi dengan rentang nilai atau nilai maksimum dikurangi nilai minimum dari fitur tersebut.
+*2. Normalisasi*
+Tahapan ini bertujuan untuk mengubah nilai kolom numerik dalam kumpulan data ke skala umum, tanpa mendistorsi perbedaan dalam rentang nilai. Pada proyek ini, data yang dinormalisasi adalah data pada kolom rating pada file *ratings.csv* dengan menggunakan metode *Min-Max*. Pada metode *Min-Max* ini setiap nilai pada sebuah fitur akan dikurangi dengan nilai minimum fitur tersebut, setelah itu akan dibagi dengan rentang nilai atau nilai maksimum dikurangi nilai minimum dari fitur tersebut.
 
-3. Splitting 
-Pada tahap ini dataset akan dibagi menjadi 2, yaitu train dan test data. Train data digunakan sebagai training model, sedangkan test data digunakan sebagai validasi model. Dalam proyek kali ini dataset dibagi sesuai dengan proporsi yang umum digunakan yaitu 80:20, 80% sebagai train data dan 20% sebagai test data. Proses dalam melakukan splitting ini dimulai dengan dataset mengacak sample data yang diikuti dengan membagi data tersebut. Pada splitting ini terdapat parameter test_size yang digunakan untuk mendefinisikan ukuran data testing yang mana dalam proyek ini adalah test_size=200000. Selanjutnya yaitu membagi data untuk modelling dengan menggunakan slicing dengan format [baris, kolom], dimana [X_train[:, 0], X_train[:, 1] yang berarti akan mengeksekusi semua baris, kolom pertama dan kedua.
+*3. Splitting* 
+Pada tahap ini dataset akan dibagi menjadi 2, yaitu *train* dan *test* data. *Train* data digunakan sebagai *training* model, sedangkan *test* data digunakan sebagai validasi model. Dalam proyek kali ini dataset dibagi sesuai dengan proporsi yang umum digunakan yaitu 80:20, 80% sebagai *train* data dan 20% sebagai *test* data. Proses dalam melakukan *splitting* ini dimulai dengan dataset mengacak sample data yang diikuti dengan membagi data tersebut. Pada *splitting* ini terdapat parameter *test_size* yang digunakan untuk mendefinisikan ukuran data *testing* yang mana dalam proyek ini adalah *test_size=200000*. Selanjutnya yaitu membagi data untuk *modelling* dengan menggunakan *slicing* dengan format [baris, kolom], dimana *[X_train[:, 0], X_train[:, 1]* yang berarti akan mengeksekusi semua baris, kolom pertama dan kedua.
 
+#
 ## Modeling
-
 Pada proyek kali ini menggunakan model dengan teknik embedding, yaitu model Neural Collaborative Filtering (NCF). Model Neural Collaborative Filtering (NCF) merupakan sebuah neural network yang menyediakan Collaborative Filtering berdasarkan umpan balik implisit yang mana dapat merekomendasikan produk berdasarkan interaksi user dan item, seperti memberian penilaian berupa skor rating terhadap suatu film. Berikut ini merupakan tahapan dalam mendapatkan list rekomendasi film berdasarkan perilaku user yang dalam hal ini adalah pemberian rating terhadap film yang telah ditonton oleh user tersebut :
 1. Mencari data film apa saja yang telah ditonton oleh user yang kemudian dimasukkan ke dalam dataframe baru, dengan parameter userId, plot dengan nilai False, dan temp dengan nilai 1.
 2. Mencari penilaian dengan rating terendah dari data film, dengan parameter rating_df.userId yang bernilai sama dengan userId.
