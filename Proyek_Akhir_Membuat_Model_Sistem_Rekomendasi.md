@@ -1,47 +1,66 @@
-# LAPORAN PROYEK MACHINE LEARNING - ALFIRA FIBRI NURNINGTYAS
+# LAPORAN PROYEK *MACHINE LEARNING* - ALFIRA FIBRI NURNINGTYAS
+#
+#
 
-## Project Overview
+## *Project Overview*
+Teknologi informasi dan telekomunikasi semakin berkembang dan mengalami peningkatan yang sangat tinggi, dalam  hal  ini  dapat  diketahui  banyak  sekali  kegiatan  manusia  yang membutuhkan  teknologi  informasi  dan komunikasi untuk saat ini, tidak terkecuali dalam bidang musik maupun film. Film merupakan *audio visual* yang memiliki banyak *genre*, seperti genre komedi, drama, horor, *action*, dan masih banyak lagi.
 
-Teknologi informasi dan telekomunikasi semakin berkembang dan mengalami peningkatan yang sangat tinggi, dalam  hal  ini  dapat  diketahui  banyak  sekali  kegiatan  manusia  yang membutuhkan  teknologi  informasi  dan komunikasi untuk saat ini, tidak terkecuali dalam bidang musik maupun film. Film merupakan audio visual yang memiliki banyak genre, seperti genrekomedi, drama, horor, action, dan masih banyak lagi.
+Film  sudah  menjadi  salah  satu  media  hiburan  yang  populer  di  kalangan masyarakat. Sejak  tahun  1874  sampai 2015, sebanyak  3.361.741  judul  film  telah  dikeluarkan  oleh  industri  perfilman.  Banyaknya  judul-judul  film yang  telah  beredar memunculkan masalah  baru  bagi  penikmat  film  untuk  menemukan  film  mana  yang selanjutnya  akan ditonton.  Data-data  film  yang  terdapat  dalam  suatu  website  dapat  diolah  dan dimanfaatkan untuk  merekomendasikan  film  kepada *user* lain.  Masalah  ini  dapat  diatasi dengan  menyampaikan  informasi berupa  daftar-daftar  film  yang  menjadi  rekomendasi kepada  penikmat  film  tersebut  berdasarkan  preferensinya sendiri *(user)*. Oleh karena itu, diperlukan suatu sistem yang dapat memberikan rekomendasi film kepada *user*.
 
-Film  sudah  menjadi  salah  satu  media  hiburan  yang  populer  di  kalangan masyarakat. Sejak  tahun  1874  sampai 2015, sebanyak  3.361.741  judul  film  telah  dikeluarkan  oleh  industri  perfilman.  Banyaknya  judul-judul  film yang  telah  beredar memunculkan masalah  baru  bagi  penikmat  film  untuk  menemukan  film  mana  yang selanjutnya  akan ditonton.  Data-data  film  yang  terdapat  dalam  suatu  website  dapat  diolah  dan dimanfaatkan untuk  merekomendasikan  film  kepada user lain.  Masalah  ini  dapat  diatasi dengan  menyampaikan  informasi berupa  daftar-daftar  film  yang  menjadi  rekomendasi kepada  penikmat  film  tersebut  berdasarkan  preferensinya sendiri (user). Oleh karena itu, diperlukan suatu sistem yang dapat memberikan rekomendasi film kepada user.
+Sistem rekomendasi adalah suatu mekanisme yang dapat memberikan suatu informasi atau rekomendasi sesuai dengan kesukaan *user* berdasarkan informasi yang diperoleh dari *user*. Oleh karena itu, diperlukan model rekomendasi yang tepat agar rekomendasi yang diberikan oleh sistem sesuai dengan kesukaan *user*, serta mempermudah *user* mengambil keputusan dalam menentukan item (film) yang akan dipilih. Salah satu metode rekomendasi yang digunakan dalam sistem rekomendasi adalah *Collaborative filltering*. *Collaborative filltering* menghubungkan setiap *user* dengan kesukaan yang sama terhadap suatu item (film) berdasarkan rating yang diberikan *user*. 
 
-Sistem rekomendasi adalah suatu mekanisme yang dapat memberikan suatu informasi atau rekomendasi sesuai dengan kesukaan user berdasarkan informasi yang diperoleh dari user. Oleh karena itu, diperlukan model rekomendasi yang tepat agar rekomendasi yang diberikan oleh sistem sesuai dengan kesukaan user, serta mempermudah user mengambil keputusan dalam menentukan item (film) yang akan dipilih. Salah satu metode rekomendasi yang digunakan dalam sistem rekomendasi adalah Collaborative filltering. Collaborative filltering menghubungkan setiap user dengan kesukaan yang sama terhadap suatu item (film) berdasarkan rating yang diberikan user. 
-
-## Business Understanding
-1. Problem Statements
+#
+## *Business Understanding*
+#### *1. Problem Statements*
 Berdasarkan penjelasan latar belakang di atas, maka dapat dirumuskan permasalahan sebagai berikut :
-- Bagaimana cara meningkatkan user experience dalam mencari film yang diinginkan?
-- Bagaimana cara penerapan pendekatan collaborative filtering dalam membuat sistem rekomendasi film?
+- Bagaimana cara meningkatkan *user experience* dalam mencari film yang diinginkan?
+- Bagaimana cara penerapan pendekatan *collaborative filtering* dalam membuat sistem rekomendasi film?
 
-2. Goals
+#
+#### *2. Goals*
 Tujuan yang diharapkan dari proyek ini adalah sebagai berikut :
-- Dapat meningkatkan user experience dalam mencari film yang diinginkan.
-- Dapat menerapkan pendekatan collaborative filtering dalam membuat sistem rekomendasi film.
+- Dapat meningkatkan *user experience* dalam mencari film yang diinginkan.
+- Dapat menerapkan pendekatan *collaborative filtering* dalam membuat sistem rekomendasi film.
 
-3. Solution Statements
+#
+#### *3. Solution Statements*
 Dari rumusan masalah dan tujuan di atas, maka solusi yang dapat dilakukan adalah sebagai berikut :
-- Menggunakan pendekatan collaborative filtering dalam membuat sistem rekomendasi film. Hal ini dikarenakan dataset yang digunakan dalam proyek ini berisi tentang rating user terhadap film-film yang telah ditonton. Atribut yang digunakan pada pendekatan collaborative filtering ini adalah perilaku user, yaitu seperti merekomendasikan suatu film berdasarkan riwayat rating dari user itu sendiri ataupun user lain.
+- Menggunakan pendekatan *collaborative filtering* dalam membuat sistem rekomendasi film. Hal ini dikarenakan dataset yang digunakan dalam proyek ini berisi tentang rating *user* terhadap film-film yang telah ditonton. Atribut yang digunakan pada pendekatan *collaborative filtering* ini adalah *perilaku user*, yaitu seperti merekomendasikan suatu film berdasarkan riwayat rating dari *user* itu sendiri ataupun *user* lain.
 
-## Data Understanding
-Dataset yang digunakan pada proyek ini didapatkan dari website kaggle.com. Untuk mengarah pada dataset tersebut dapat mengunjungi link berikut https://www.kaggle.com/datasets/suryadeepti/movie-lens-dataset. Pada dataset ini memiliki format .csv yang didalamnya terdapat 2 file, yaitu movies.csv dan ratings.csv. Berikut adalah rincian dari kedua file tersebut :
-1. movies.csv terdapat 9742 baris dan 3 kolom dengan uraian sebagai berikut :
-- movieId, merupakan unique Id untuk masing-masing film
-- title, merupakan nama atau judul film yang disertai dengan tahun release dalam tanda kurung
-- genres, merupakan genre film 
+#
+## *Data Understanding*
+Dataset yang digunakan pada proyek ini didapatkan dari *website* kaggle.com. Untuk mengarah pada dataset tersebut dapat mengunjungi link berikut https://www.kaggle.com/datasets/suryadeepti/movie-lens-dataset. Pada dataset ini memiliki format .csv yang didalamnya terdapat 2 file, yaitu *movies.csv* dan *ratings.csv*. Berikut adalah rincian dari kedua file tersebut :
+1. *movies.csv* terdapat 9742 baris dan 3 kolom dengan uraian sebagai berikut :
+- *movieId*, merupakan *unique Id* untuk masing-masing film
+- *title*, merupakan nama atau judul film yang disertai dengan tahun *release* dalam tanda kurung
+- *genres*, merupakan genre film 
 
-2. ratings.csv terdapat 101000 baris dan 4 kolom dengan uraian sebagai berikut:
-- userId, merupakan unique Id untuk masing-masing user
-- movieId, merupakan unique Id untuk masing-masing film
+2. *ratings.csv* terdapat 101000 baris dan 4 kolom dengan uraian sebagai berikut:
+- *userId*, merupakan *unique Id* untuk masing-masing *user*
+- *movieId*, merupakan *unique Id* untuk masing-masing film
 - rating, merupakan penilaian berupa skor oleh user terhadap suatu film
-- timestamp, merupakan kode waktu film atau tanggal dimana user menilai film tersebut
+- *timestamp*, merupakan kode waktu film atau tanggal dimana *user* menilai film tersebut
 
-Berikut ini adalah overview dari dataset yang telah dijadikan dataframe :
-1. movie_df
-Merupakan dataframe yang berisi data dari file movies.csv seperti yang ditunjukkan pada tabel di bawah ini :
+#
+Berikut ini adalah *overview* dari dataset yang telah dijadikan *dataframe* :
+*1. movie_df*
+Merupakan *dataframe* yang berisi data dari file *movies.csv* seperti yang ditunjukkan pada tabel di bawah ini :
+| movieId | title	                                   | genres                                      |
+|---------|------------------------------------------|---------------------------------------------|
+| 1       | Toy Story (1995)                         | Adventure|Animation|Children|Comedy|Fantasy |
+| 2       | Jumanji (1995)                           | Adventure-Children-Fantasy                  |
+| 3       | Grumpier Old Men (1995)	                 | Comedy-Romance                              |
+| 4       | Grumpier Old Men (1995)	                 | Comedy-Romance                              |
+| 5       | Grumpier Old Men (1995)	                 | Comedy-Romance                              |
+| ......  | ........................................ | ........................................... |
+| 193585  | Flint (2017)	                           | Drama                                       |
+| 193587  | Bungo Stray Dogs: Dead Apple (2018)      | Action-Animation                            |
+| 193609  | Andrew Dice Clay: Dice Rules (1991)	     | Comedy                                      |
+| 3       | Grumpier Old Men (1995)	                 | Comedy-Romance                              |
+| 3       | Grumpier Old Men (1995)	                 | Comedy-Romance                              |
 
-2. rating_df
-Merupakan dataframe yang berisi data dari file ratings.csv. Pada dataframe ini data timestamp telah di drop karena data tersebut tidak diperlukan. Dataframe rating ditunjukkan pada tabel di bawah ini :
+*2. rating_df*
+Merupakan *dataframe* yang berisi data dari file *ratings.csv*. Pada *dataframe* ini data *timestamp* telah di *drop* karena data tersebut tidak diperlukan.*Dataframe* rating ditunjukkan pada tabel di bawah ini :
 
 
 ## Data Preparation
